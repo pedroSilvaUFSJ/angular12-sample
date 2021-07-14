@@ -1,0 +1,20 @@
+<mat-card>
+    <mat-card-title>Delete Product</mat-card-title>
+    <form *ngIf="product else loading">
+        <mat-form-field>
+            <input disabled matInput placeholder="Name" [ngModel]="product.name" name="name">
+        </mat-form-field>
+        <mat-form-field>
+            <input disabled matInput placeholder="Price" [ngModel]="product.price" name="price">
+        </mat-form-field>
+    </form>
+    <ng-template #loading>
+        <mat-spinner></mat-spinner>
+    </ng-template>
+    <button mat-raised-button (click)="deleteProduct()" color="warn">
+        Delete
+    </button>
+    <button class="teste" mat-raised-button (click)="cancelProduct()" color="">
+        Cancel
+    </button>
+</mat-card>

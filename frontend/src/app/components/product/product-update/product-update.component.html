@@ -1,0 +1,20 @@
+<mat-card>
+    <mat-card-title>Update Product</mat-card-title>
+    <form *ngIf="product else loading">
+        <mat-form-field>
+            <input matInput placeholder="Name" [(ngModel)]="product.name" name="name">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Price" [(ngModel)]="product.price" name="price">
+        </mat-form-field>
+    </form>
+    <ng-template #loading>
+        <mat-spinner></mat-spinner>
+    </ng-template>
+    <button  mat-raised-button (click)="updateProduct()" color="primary">
+        Update
+    </button >
+    <button class="teste" mat-raised-button (click)="cancelProduct()" color="warn">
+        Cancel
+    </button>
+</mat-card>
